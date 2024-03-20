@@ -72,7 +72,7 @@ if st.button('搜索'):
             # 将结果显示在网页上
             for result, text_type,score in results:
                 st.write(f"类型: {text_type}")
-                st.write(f"距离:{score}")
+                st.write(f"相似度:{score}")
                 st.write(f"文本: {result}")
                 st.write("")  # 添加空行以分隔不同的结果
         else:
