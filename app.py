@@ -52,7 +52,7 @@ id_to_text = load_id_to_text_mapping()
 
 # 获取文本类型的函数
 def get_text_type(text_id):
-    type_code = text_id[-5:-3]  # 获取ID的倒数第4、倒数第5位数字组成的字符串
+    type_code = str(text_id)[-5:-3]  # 获取ID的倒数第4、倒数第5位数字组成的字符串
     return c_dict.get(type_code, "未知类型")  # 从字典中查找对应的文本类型
 
 # 创建一个文本输入框
