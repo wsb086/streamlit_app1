@@ -66,11 +66,13 @@ if st.button('搜索'):
         if response.status_code == 200:
             # 解析返回的ID列表
             top_ids = response.json().get('data', [])
+            top_sim = response.json().get('sim', [])
             # 获取对应的文本和类型
-            results = [(id_to_text.get(i, "未找到对应的文本"), get_text_type(i)) for i in top_ids]
+            results = [(id_to_text.get(top_ids[i], "未找到对应的文本"), get_text_type(top_ids[i]),top_sim[i]) for i in range(len(top_ids))]
             # 将结果显示在网页上
-            for result, text_type in results:
+            for result, text_type,score in results:
                 st.write(f"类型: {text_type}")
+                st.write(f"距离:{score}")
                 st.write(f"文本: {result}")
                 st.write("")  # 添加空行以分隔不同的结果
         else:
