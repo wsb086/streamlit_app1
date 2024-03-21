@@ -62,7 +62,7 @@ query = st.text_input('请输入你的查询：')
 if st.button('搜索'):
     if query:  # 确保输入不为空
         # 发送请求到接口
-        response = requests.post(API_URL, json={"query": query})
+        response = requests.post(API_URL, json={"query": query,'n':10})
         if response.status_code == 200:
             # 解析返回的ID列表
             top_ids = response.json().get('data', [])
