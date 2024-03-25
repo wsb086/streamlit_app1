@@ -57,12 +57,13 @@ def get_text_type(text_id):
 
 # 创建一个文本输入框
 query = st.text_input('请输入你的查询：')
-
+number = st.number_input('请输入召回数目(1-50)', min_value=1, max_value=50, value=20)
 # 当用户输入查询并点击按钮时
 if st.button('搜索'):
     if query:  # 确保输入不为空
         # 发送请求到接口
-        response = requests.post(API_URL, json={"query": query,'n':10})
+        
+        response = requests.post(API_URL, json={"query": query,'n':number})
         if response.status_code == 200:
             # 解析返回的ID列表
             top_ids = response.json().get('data', [])
