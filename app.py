@@ -94,7 +94,7 @@ if st.button('搜索'):
                 col1 = column[i]
                 standardized = standardize_category2(standardize_category1(col1))
                 # 检查当前列是否在用户选择的选项中
-                if standardized in selected_options:
+                if standardized in selected_options and "参考文献" not in content[i]:
                     filtered_results.append((top_ids[i], col1, top_sim[i], content[i]))
                         
 
