@@ -72,7 +72,7 @@ if st.button('搜索'):
             # 获取对应的文本和类型
             #results = [(id_to_text.get(top_ids[i], "未找到对应的文本"), get_text_type(top_ids[i]),top_sim[i]) for i in range(len(top_ids))]
             # 将结果显示在网页上
-            results=[(top_ids,column,top_sim,content) for i in range(len(top_ids))]
+            results=[(top_ids[i],column[i],top_sim[i],content[i]) for i in range(len(top_ids))]
             for id,col1,sim,con in results:
                 st.write(f"ID: {id}")
                 st.write(f"类型: {col1}")
