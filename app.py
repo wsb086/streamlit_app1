@@ -70,7 +70,7 @@ def standardize_category1(category):
 def standardize_category2(category):
     return re.sub(r'三级_(.+?)_概述_0', r'三级_x_概述_0', category)
 query = st.text_input('请输入你的查询：')
-number = st.number_input('请输入召回数目(1-50)', min_value=1, max_value=50, value=20)
+number = st.number_input('请输入召回数目(1-500)', min_value=1, max_value=500, value=100)
 
 # 创建复选框让用户选择展示哪些列
 options = list(c_dict.keys())
