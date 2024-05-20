@@ -44,7 +44,7 @@ API_URL = 'http://test18.kydev.net/rag/search_string'
 # 加载ID和文本的映射
 @st.cache
 # def load_id_to_text_mapping():
-#     with open('data2.json', 'r', encoding='utf-8') as file:
+#     with open('data0322.json', 'r', encoding='utf-8') as file:
 #         data = json.load(file)
 #         return {item['id']: item['content'] for item in data}
 
